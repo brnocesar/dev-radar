@@ -11,5 +11,9 @@ exports.setupWebsocket = (server) => {
         console.log(socket.handshake.query)
         console.log(socket.handshake.time)
         console.log('ta pegando fogo bixo')
+
+        setTimeout(() => {
+            socket.emit('message', 'Hello again, friend of a friend')
+        }) //teste
     })
 }
