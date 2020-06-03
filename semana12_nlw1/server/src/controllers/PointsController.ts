@@ -16,7 +16,7 @@ class PointsController {
             items
         } = request.body;
 
-        const trx = await knex.transaction();                           // nao ta funcionando com transaction
+        const trx = await knex.transaction();                           // nao ta(va) funcionando com transaction
 
         const point = {
             image: 'image-fake',
@@ -29,8 +29,8 @@ class PointsController {
             uf
         };
     
-        // const insertedIds = await trx('points').insert(point);
-        const insertedIds = await knex('points').insert(point);
+        const insertedIds = await trx('points').insert(point);
+        // const insertedIds = await knex('points').insert(point);      // sem transaction
     
         const point_id = insertedIds[0];
     
@@ -41,15 +41,17 @@ class PointsController {
             }
         });
     
-        // await trx('point_items').insert(pointItems);
-        await knex('point_items').insert(pointItems);
+        await trx('point_items').insert(pointItems);
+        // await knex('point_items').insert(pointItems);                // sem transaction
 
-        return response.json({
+        await trx.commit();
+
+        return trx.isCompleted() ? response.json({
             success: true,
             id: point_id,
             ...point,
             items: items
-        });
+        }) : response.json({ success: false }) ;
     }
 }
 
