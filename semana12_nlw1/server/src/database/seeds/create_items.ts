@@ -1,9 +1,11 @@
 import * as Knex from "knex";
 
 export async function seed(knex: Knex) {
+
     // Deletes ALL existing entries
     return knex("items").del()
         .then(() => {
+            
             // Inserts seed entries
             return knex("items").insert([
                 { title: 'Lâmpadas', image: 'lampadas.svg' },
