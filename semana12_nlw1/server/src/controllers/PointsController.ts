@@ -3,6 +3,24 @@ import knex from '../database/connection';
 
 class PointsController {
 
+    async index(request:Request, response: Response) {
+
+        const { city, uf, items } = request.query; // filtros
+
+        const parsedItems = String(items).split(',').map(item => Number(item.trim()));
+
+        const points = await knex('points')
+            .join('point_items', 'points.id', '=', 'point_items.point_id')
+            .whereIn('point_items.item_id', parsedItems)
+            .where('city', String(city))
+            .where('uf', String(uf))
+            .distinct()
+            .select('points.*');
+
+        return response.json(points);
+
+    }
+
     async create(request: Request, response: Response) {
 
         const {
@@ -16,7 +34,7 @@ class PointsController {
             items
         } = request.body;
 
-        const trx = await knex.transaction();                           // nao ta(va) funcionando com transaction
+        const trx = await knex.transaction();
 
         const point = {
             image: 'image-fake',
@@ -30,7 +48,6 @@ class PointsController {
         };
     
         const insertedIds = await trx('points').insert(point);
-        // const insertedIds = await knex('points').insert(point);      // sem transaction
     
         const point_id = insertedIds[0];
     
@@ -42,7 +59,6 @@ class PointsController {
         });
     
         await trx('point_items').insert(pointItems);
-        // await knex('point_items').insert(pointItems);                // sem transaction
 
         await trx.commit();
 
@@ -57,7 +73,7 @@ class PointsController {
 
     async show (request: Request, response: Response) {
         
-        const {id} = request.params; // const id = request.params.id;
+        const {id} = request.params;
 
         const point = await knex('points').where('id', id).first();
 
@@ -65,11 +81,6 @@ class PointsController {
             return response.status(400).json({ message: 'Point not found.'});
         }
 
-        /*
-         * SELECT * FROM items 
-            JOIN point_items ON items.id = point_items.item_id
-            WHERE point_items.point_id = {id};
-         */
         const items = await knex('items')
             .join('point_items', 'items.id', '=', 'point_items.item_id')
             .where('point_items.point_id', id)
