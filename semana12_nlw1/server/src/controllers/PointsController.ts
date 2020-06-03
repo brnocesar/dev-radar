@@ -53,6 +53,30 @@ class PointsController {
             items: items
         }) : response.json({ success: false }) ;
     }
+
+
+    async show (request: Request, response: Response) {
+        
+        const {id} = request.params; // const id = request.params.id;
+
+        const point = await knex('points').where('id', id).first();
+
+        if ( !point ) {
+            return response.status(400).json({ message: 'Point not found.'});
+        }
+
+        /*
+         * SELECT * FROM items 
+            JOIN point_items ON items.id = point_items.item_id
+            WHERE point_items.point_id = {id};
+         */
+        const items = await knex('items')
+            .join('point_items', 'items.id', '=', 'point_items.item_id')
+            .where('point_items.point_id', id)
+            .select('items.title');
+
+        return response.json({ point, items });
+    }
 }
 
 export default PointsController;
