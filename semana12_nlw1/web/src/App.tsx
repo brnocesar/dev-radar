@@ -8,7 +8,7 @@ import Header from './Header';
 function App() {
     return (
         <div>
-            <Header />
+            <Header title="Ecoleta" />
             
             <h1>Hello World!</h1>
         </div>
