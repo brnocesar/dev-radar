@@ -27,4 +27,4 @@ A imagem e descrição das pessoas cadastradas são obtidas através da API do G
 <br>
 
 ### Edição #12 - Ecoleta<a name='12'></a>
-Nesta edição está sendo desenvolvida uma aplicação que conecta locais especializados em coletar resíduos e pessoas que querem descartá-los de forma adequada.
+Nesta edição a aplicação é um marketplace para conectar locais especializados em coletar resíduos e pessoas que querem descartá-los de forma adequada.
