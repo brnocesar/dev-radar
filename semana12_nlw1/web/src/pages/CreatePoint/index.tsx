@@ -30,8 +30,13 @@ const CreatePoint = () => {
 
     const [items, setItems] = useState<Item[]>([]);
     const [ufs, setUfs] = useState<UF[]>([]);
-    const [selectedUf, setSelectedUf] = useState('');
     const [cities, setCities] = useState<City[]>([]);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        whatsapp: ''
+    });
+    const [selectedUf, setSelectedUf] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [initialPosition, setInitialPosition] = useState<[number, number]>([-25.476088, -49.291985]);
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>(initialPosition);
@@ -62,6 +67,7 @@ const CreatePoint = () => {
         });
     }, []);
 
+
     function handleSelectedUf(event: ChangeEvent<HTMLSelectElement>) {
         const uf = event.target.value;
         setSelectedUf(uf);
@@ -76,6 +82,12 @@ const CreatePoint = () => {
             event.latlng.lat,
             event.latlng.lng
         ]);
+    }
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value});
+        console.log(formData);
     }
 
 
@@ -104,6 +116,7 @@ const CreatePoint = () => {
                             type="text"
                             name="name"
                             id="name"
+                            onChange={handleInputChange}
                         />
                     </div>
 
@@ -114,6 +127,7 @@ const CreatePoint = () => {
                                 type="email"
                                 name="email"
                                 id="email"
+                                onChange={handleInputChange}
                             />
                         </div>
                         <div className="field">
@@ -122,6 +136,7 @@ const CreatePoint = () => {
                                 type="text"
                                 name="whatsapp"
                                 id="whatsapp"
+                                onChange={handleInputChange}
                             />
                         </div>
                     </div>
@@ -133,7 +148,6 @@ const CreatePoint = () => {
                         <span>Selecione o endereço no mapa</span>
                     </legend>
 
-                    {/* <Map center={[-25.476088, -49.291985]} zoom={15} onClick={handleMapClick}> */}
                     <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
                         <TileLayer
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
