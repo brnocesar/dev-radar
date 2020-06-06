@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState, ChangeEvent} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, Marker, TileLayer } from 'react-leaflet';
@@ -18,16 +18,20 @@ interface UF {
     id: number;
     sigla: string;
     nome: string;
-}; //opção 1 para Estado
-interface IBGEUFResponse {
-    sigla: string;
-} //opção 2 para Estado
+};
+
+interface City {
+    id: number;
+    nome: string;
+};
 
 const CreatePoint = () => {
 
     const [items, setItems] = useState<Item[]>([]);
-    const [ufCompleta, setUfCompleta] = useState<UF[]>([]); //opção 1 para Estado
-    const [ufSiglas, setUfSiglas] = useState<string[]>([]); //opção 2 para Estado
+    const [ufs, setUfs] = useState<UF[]>([]);
+    const [selectedUf, setSelectedUf] = useState('');
+    const [cities, setCities] = useState<City[]>([]);
+    const [selectedCity, setSelectedCity] = useState('');
 
 
     useEffect(() => {
@@ -38,15 +42,24 @@ const CreatePoint = () => {
 
     useEffect(() => {
         axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
-            setUfCompleta(response.data);
+            setUfs(response.data);
         });
-    }, []); //opção 1 para Estado
+    }, []);
+
     useEffect(() => {
-        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
-            const ufSiglas = response.data.map(ufSigla => ufSigla.sigla);
-            setUfSiglas(ufSiglas);
+        axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios?orderBy=nome`).then(response => {
+            setCities(response.data);
         });
-    }, []); //opção 2 para Estado
+    }, [selectedUf]);
+
+    function handleSelectedUf(event: ChangeEvent<HTMLSelectElement>){
+        const uf = event.target.value;
+        setSelectedUf(uf);
+    }
+
+    function handleSelectedCity(event: ChangeEvent<HTMLSelectElement>){
+        setSelectedCity(event.target.value);
+    }
 
 
     return (
@@ -114,20 +127,30 @@ const CreatePoint = () => {
                     <div className="field-group">
                         <div className="field">
                             <label htmlFor="uf">Estado</label>
-                            <select name="uf" id="uf">
+                            <select 
+                                name="uf" 
+                                id="uf" 
+                                value={selectedUf} 
+                                onChange={handleSelectedUf}
+                            >
                                 <option value="">Selecione o Estado</option>
-                                {ufCompleta.map(uf => (
+                                {ufs.map(uf => (
                                     <option key={uf.id} value={uf.sigla}>{uf.nome}</option>
-                                ))} {/* opção 1 para Estado */}
-                                {/* {ufSiglas.map(uf => (
-                                    <option key={uf} value={uf}>{uf}</option>
-                                ))} */} {/* opção 2 para Estado */}
+                                ))}
                             </select>
                         </div>
                         <div className="field">
                             <label htmlFor="uf">Cidade</label>
-                            <select name="city" id="city">
-                                <option value="0">Selecione uma Cidade</option>
+                            <select 
+                                name="city" 
+                                id="city" 
+                                value={selectedCity} 
+                                onChange={handleSelectedCity}
+                            >
+                                <option value="">Selecione uma Cidade</option>
+                                {cities.map(city => (
+                                    <option key={city.id} value={city.nome}>{city.nome}</option>
+                                ))}
                             </select>
                         </div>
                     </div>
