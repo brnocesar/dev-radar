@@ -40,6 +40,7 @@ const CreatePoint = () => {
     const [selectedCity, setSelectedCity] = useState('');
     const [initialPosition, setInitialPosition] = useState<[number, number]>([-25.476088, -49.291985]);
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>(initialPosition);
+    const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
 
     useEffect(() => {
@@ -87,7 +88,17 @@ const CreatePoint = () => {
     function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value});
-        console.log(formData);
+    }
+
+    function handleSelectItem(id: number) {
+        const alreadySelected = selectedItems.findIndex(item => item === id);
+
+        if ( alreadySelected >= 0 ) {
+            const filteredItems = selectedItems.filter(item => item !== id);
+            setSelectedItems(filteredItems);
+            return;
+        }
+        setSelectedItems([ ...selectedItems, id]);
     }
 
 
@@ -196,7 +207,11 @@ const CreatePoint = () => {
 
                     <ul className="items-grid">
                         {items.map(item => (
-                            <li key={item.id}>
+                            <li 
+                                key={item.id} 
+                                onClick={() => handleSelectItem(item.id)}
+                                className={selectedItems.includes(item.id) ? 'selected' : ''}
+                            >
                                 <img src={item.image_url} alt="Lâmpadas"/>
                                 <span>{item.title}</span>
                             </li>
