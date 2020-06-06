@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, Marker, TileLayer } from 'react-leaflet';
+import axios from 'axios';
 import api from '../../services/api';
 import './styles.css';
 import logo from '../../assets/logo.svg';
@@ -13,15 +14,40 @@ interface Item {
     image_url: string;
 };
 
+interface UF {
+    id: number;
+    sigla: string;
+    nome: string;
+}; //opção 1 para Estado
+interface IBGEUFResponse {
+    sigla: string;
+} //opção 2 para Estado
+
 const CreatePoint = () => {
 
     const [items, setItems] = useState<Item[]>([]);
+    const [ufCompleta, setUfCompleta] = useState<UF[]>([]); //opção 1 para Estado
+    const [ufSiglas, setUfSiglas] = useState<string[]>([]); //opção 2 para Estado
+
 
     useEffect(() => {
         api.get('items').then(response => {
             setItems(response.data);
         });
     }, []);
+
+    useEffect(() => {
+        axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
+            setUfCompleta(response.data);
+        });
+    }, []); //opção 1 para Estado
+    useEffect(() => {
+        axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
+            const ufSiglas = response.data.map(ufSigla => ufSigla.sigla);
+            setUfSiglas(ufSiglas);
+        });
+    }, []); //opção 2 para Estado
+
 
     return (
         <div id="page-create-point">
@@ -89,7 +115,13 @@ const CreatePoint = () => {
                         <div className="field">
                             <label htmlFor="uf">Estado</label>
                             <select name="uf" id="uf">
-                                <option value="0">Selecione o Estado</option>
+                                <option value="">Selecione o Estado</option>
+                                {ufCompleta.map(uf => (
+                                    <option key={uf.id} value={uf.sigla}>{uf.nome}</option>
+                                ))} {/* opção 1 para Estado */}
+                                {/* {ufSiglas.map(uf => (
+                                    <option key={uf} value={uf}>{uf}</option>
+                                ))} */} {/* opção 2 para Estado */}
                             </select>
                         </div>
                         <div className="field">
