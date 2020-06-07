@@ -1,36 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, Text, SafeAreaView } from 'react-native';
 import Constants from 'expo-constants';
 import { Feather as IconFE, FontAwesome as IconFA } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
+import api from '../../services/api';
+
+interface Params {
+    point_id: number;
+}
+
+interface DataPoint {
+    point: {
+        image: string;
+        name: string;
+        email: string;
+        whatsapp: string;
+        city: string;
+        uf: string;
+    };
+    items: {
+        title: string;
+    }[];
+}
+
 
 const Detail = () => {
 
     const navigation = useNavigation();
+    const route = useRoute();
+    const routeParams = route.params as Params;
+    const [dataPoint, setDataPoint] = useState<DataPoint>({} as DataPoint);
+
+
+    useEffect(() => {
+        api.get(`points/${routeParams.point_id}`).then(response => {
+            setDataPoint(response.data);
+        });
+    }, []);
 
     function handleNavigateBack() {
         navigation.goBack();
     }
 
 
+    if ( !dataPoint.point ) {
+        return null;
+    }
+
     return (
 
-        // <>
         <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container} >
                 <TouchableOpacity onPress={handleNavigateBack} >
                     <IconFE name="arrow-left" size={30} color="#34cb79" />
                 </TouchableOpacity>
 
-                <Image style={styles.pointImage} source={{ uri: "https://images.unsplash.com/photo-1553688737-e4fbcdad80c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" }} />
+                <Image style={styles.pointImage} source={{ uri: dataPoint.point.image }} />
 
-                <Text style={styles.pointName}>Ponto de coleta</Text>
-                <Text style={styles.pointItems}>Lâmpadas, Pilhas e baterias</Text>
+                <Text style={styles.pointName}>
+                    {dataPoint.point.name}
+                </Text>
+                <Text style={styles.pointItems}>
+                    {dataPoint.items.map(item => item.title).join(', ')}
+                </Text>
 
                 <View style={styles.address}>
                     <Text style={styles.addressTitle}>Endereço</Text>
-                    <Text style={styles.addressContent}>Curitiba, PR</Text>
+                    <Text style={styles.addressContent}>
+                        {`${dataPoint.point.city}, ${dataPoint.point.uf}`}
+                    </Text>
                 </View>
             </View>
 
@@ -45,7 +84,6 @@ const Detail = () => {
                 </RectButton>
             </View>
         </SafeAreaView>
-        // </>
     );
 };
 
@@ -56,7 +94,6 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 32,
         paddingTop: 20 + Constants.statusBarHeight,
-        // paddingTop: 20,
     },
 
     title: {
@@ -113,7 +150,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // paddingBottom: 20,
     },
     
     button: {
