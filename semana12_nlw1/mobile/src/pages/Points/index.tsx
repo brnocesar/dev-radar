@@ -62,12 +62,12 @@ const Points = () => {
             params: {
                 city: 'Curitiba',
                 uf: 'PR',
-                items: [10]
+                items: selectedItems
             }
         }).then(response => {
             setPoints(response.data)
         });
-    }, []);
+    }, [selectedItems]);
 
 
     function handleNavigateBack() {
