@@ -15,6 +15,7 @@ interface Params {
 interface DataPoint {
     point: {
         image: string;
+        image_url: string;
         name: string;
         email: string;
         whatsapp: string;
@@ -69,7 +70,7 @@ const Detail = () => {
                     <IconFE name="arrow-left" size={30} color="#34cb79" />
                 </TouchableOpacity>
 
-                <Image style={styles.pointImage} source={{ uri: dataPoint.point.image }} />
+                <Image style={styles.pointImage} source={{ uri: dataPoint.point.image_url }} />
 
                 <Text style={styles.pointName}>
                     {dataPoint.point.name}
