@@ -1,4 +1,6 @@
 #page-home {
+    /* height: 100vh;
+    background: url('../../assets/home-background.svg') no-repeat 750px bottom; */
     height: 100vh;
     background: url('../../assets/home-background.svg') no-repeat 750px bottom;
 }
@@ -37,6 +39,16 @@
     line-height: 38px;
 }
 
+.buttons {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    margin-bottom: 60px;
+}
+
 #page-home .content main a {
     width: 100%;
     max-width: 360px;
@@ -47,7 +59,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 #page-home .content main a span {
@@ -77,6 +90,24 @@
     background: #2FB86E;
 }
 
+@media (min-width: 901px) and (max-width: 1050px) {
+    #page-home .content main {
+        max-width: 750px;
+    }
+
+    .buttons {
+        width: 100%;
+        max-width: 750px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+    }
+    
+    #page-home .content main a + a {
+        margin-left: 30px;
+    }
+}
+
 @media(max-width: 900px) {
     #page-home .content {
         align-items: center;
@@ -99,3 +130,13 @@
         font-size: 24px;
     }
 }
+
+@media (max-width: 1699px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 650px bottom; }}
+@media (max-width: 1599px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 600px bottom; }}
+@media (max-width: 1499px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 550px bottom; }}
+@media (max-width: 1399px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 500px bottom; }}
+@media (max-width: 1299px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 450px bottom; }}
+@media (max-width: 1199px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 420px bottom; }}
+@media (max-width: 1159px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 350px bottom; }}
+@media (max-width: 1074px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 320px bottom; }}
+@media (max-width: 1050px) { #page-home { background: url('../../assets/home-background.svg') no-repeat 1100px bottom; }}
