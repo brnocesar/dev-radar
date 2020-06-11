@@ -220,6 +220,7 @@ const CreatePoint = () => {
                                 id="city" 
                                 value={selectedCity} 
                                 onChange={handleSelectedCity}
+                                disabled={ !selectedUf }
                             >
                                 <option value="">
                                     { !selectedUf ? "Selecione um Estado primeiro" : "Selecione uma Cidade" }

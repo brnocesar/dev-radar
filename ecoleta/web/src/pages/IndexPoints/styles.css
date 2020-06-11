@@ -1,0 +1,61 @@
+#page-index-point {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#page-index-point main {
+    margin: 80px auto;
+    padding: 64px;
+    max-width: 1100px;
+    background: #FFF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-index-point main h1 {
+    font-size: 36px;
+}
+
+.points-grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    list-style: none;
+}
+
+.points-grid li {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(225, 225, 226);
+    width: 100%;
+    max-width: 950px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.points-grid li img {
+    width: 100%;
+    max-height: 200px;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 1px solid rgb(225, 225, 226);
+    margin-bottom: 20px;
+}
+
+.points-grid li h3 {
+    color: var(--primary-color);
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+@media(max-width: 900px) {
+    .points-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
