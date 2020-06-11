@@ -1,0 +1,41 @@
+header {
+    width: 95%;
+    max-width: 1100px;
+    margin: 48px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+}
+
+header > div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+header a {
+    color: var(--title-color);
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+header a svg {
+    margin-left: 20px;
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+@media(max-width: 900px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header > div {
+        margin-top: 50px;
+    }
+}

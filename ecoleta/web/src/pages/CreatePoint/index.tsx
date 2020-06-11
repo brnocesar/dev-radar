@@ -3,10 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
+
+import './styles.css';
 import axios from 'axios';
 import api from '../../services/api';
-import './styles.css';
-import logo from '../../assets/logo.svg';
+import NavHeader from '../../components/NavHeader';
 import Dropzone from '../../components/Dropzone';
 
 
@@ -139,13 +140,7 @@ const CreatePoint = () => {
     return (
         <div id="page-create-point">
 
-            <header>
-                <img src={logo} alt="Ecoleta"/>
-                <Link to="/">
-                    <FiArrowLeft />
-                    Voltar para home
-                </Link>
-            </header>
+            <NavHeader />
 
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro do ponto de coleta</h1>
@@ -226,7 +221,9 @@ const CreatePoint = () => {
                                 value={selectedCity} 
                                 onChange={handleSelectedCity}
                             >
-                                <option value="">Selecione uma Cidade</option>
+                                <option value="">
+                                    { !selectedUf ? "Selecione um Estado primeiro" : "Selecione uma Cidade" }
+                                </option>
                                 {cities.map(city => (
                                     <option key={city.id} value={city.nome}>{city.nome}</option>
                                 ))}
