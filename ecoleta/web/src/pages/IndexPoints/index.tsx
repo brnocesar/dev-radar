@@ -1,31 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import NavHeader from '../../components/NavHeader';
+import api from '../../services/api';
+
+
+interface Point {
+    id: number;
+    name: string;
+    city: string;
+    uf: string;
+    image_url: string;
+    items: string;
+};
 
 const IndexPoint = () => {
+
+    const [points, setPoints] = useState<Point[]>([]);
+
+    useEffect(() => {
+        api.get('points', {
+            params: {
+                // city: 'Curitiba',
+                // uf: 'PA',
+                // items: "7,8,9",
+            }
+        }).then(response => {
+            setPoints(response.data);
+        });
+    }, []);
+    
 
     return (
 
         <div id="page-index-point">
+            <div className="container">
+                <NavHeader />
 
-            <NavHeader />
+                <main>
+                    <h1>Pontos de coleta</h1>
 
-            <main>
-                <h1>Pontos de coleta</h1>
+                    <ul className="points-grid">
+                        {points.map(point => (
+                            <li 
+                                key={point.id}
+                                className="point-box"
+                            >
+                                <img src={point.image_url} alt={point.name} />
+                                <h2>{point.name}</h2>
+                                <h3>{point.items}</h3>
+                                {/* <h3>Item 1, item 2, item 3</h3> */}
+                                <span>{point.city}, {point.uf}</span>
+                            </li>
+                        ))}
+                    </ul>
 
-                <ul className="points-grid">
-                    <li className="point-box">
-                        <img src="http://192.168.0.2:3333/uploads/points/2c780db0302b-mercado.jpg" alt=""/>
-                        <h2> Ponto de coleta</h2>
-                        <h3>Item 1, item 2, item 3</h3>
-                        <span>Endereço</span>
-                    </li>
-                </ul>
+                </main>
 
-            </main>
-
+            </div>
         </div>
     );
 };

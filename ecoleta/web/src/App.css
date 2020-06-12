@@ -3,6 +3,7 @@
     --title-color: #322153;
     --text-color: #6C6C80;
     --bg-color: #F0F0F5;
+    --container-max-width: 1280px;
 }
 
 * {

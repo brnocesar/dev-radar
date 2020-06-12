@@ -1,7 +1,7 @@
 header {
-    width: 95%;
-    max-width: 1100px;
-    margin: 48px 20px 0 20px;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,13 +10,14 @@ header {
 
 header > div {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
 header a {
     color: var(--title-color);
     font-weight: bold;
+    font-size: 18px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -27,6 +28,10 @@ header a svg {
     margin-left: 20px;
     margin-right: 5px;
     color: var(--primary-color);
+}
+
+header a:hover {
+    background: #32215338;
 }
 
 @media(max-width: 900px) {
