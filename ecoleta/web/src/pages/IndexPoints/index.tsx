@@ -130,10 +130,7 @@ const IndexPoint = () => {
                                 key={point.id}
                                 className="point-box"
                             >
-                                {/* <Link to={`/pontos/${point.id}`}> */}
-                                <Link to="/">
-                                    <img src={point.image_url} alt={point.name} />
-                                </Link>
+                                <img src={point.image_url} alt={point.name} />
                                 <h2>{point.name}</h2>
                                 <h3>{point.items}</h3>
                                 <span>
