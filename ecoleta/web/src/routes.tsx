@@ -2,16 +2,16 @@ import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 
 import Home from './pages/Home';
-import CreatePoint from './pages/CreatePoint';
-import IndexPoint from './pages/IndexPoints';
+import PointCreate from './pages/PointCreate';
+import PointIndex from './pages/PointIndex';
 
 const Routes = () => {
 
     return (
         <BrowserRouter>
             <Route component={Home} path="/" exact />
-            <Route component={CreatePoint} path="/cadastro" />
-            <Route component={IndexPoint} path="/pontos" />
+            <Route component={PointCreate} path="/cadastro" />
+            <Route component={PointIndex} path="/pontos" />
         </BrowserRouter>
     );
 }

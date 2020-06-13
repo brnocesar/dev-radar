@@ -26,7 +26,7 @@ interface Point {
     items: string;
 };
 
-const IndexPoint = () => {
+const PointIndex = () => {
 
     const [ufs, setUfs] = useState<UF[]>([]);
     const [cities, setCities] = useState<City[]>([]);
@@ -147,4 +147,4 @@ const IndexPoint = () => {
     );
 };
 
-export default IndexPoint;
+export default PointIndex;

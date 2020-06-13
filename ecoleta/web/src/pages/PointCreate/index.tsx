@@ -26,7 +26,7 @@ interface City {
     nome: string;
 };
 
-const CreatePoint = () => {
+const PointCreate = () => {
 
     const [items, setItems] = useState<Item[]>([]);
     const [ufs, setUfs] = useState<UF[]>([]);
@@ -261,4 +261,4 @@ const CreatePoint = () => {
     );
 };
 
-export default CreatePoint;
+export default PointCreate;
