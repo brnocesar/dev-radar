@@ -20,6 +20,9 @@ const NavHeader = () => {
                 <Link to="/cadastro">
                     Cadastrar
                 </Link>
+                <Link to="/mobile">
+                    Versão mobile
+                </Link>
             </div>
         </header>
     );
