@@ -31,7 +31,7 @@ header a svg {
 }
 
 header a:hover {
-    background: #32215338;
+    background: #32215310;
 }
 
 @media(max-width: 900px) {
