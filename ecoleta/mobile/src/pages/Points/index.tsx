@@ -59,10 +59,14 @@ const Points = () => {
     }, []);
 
     useEffect(() => {
+        if ( selectedItems.length === 0 ) {
+            setPoints([])
+            return;
+        }
         api.get('points', {
             params: {
-                city: 'Curitiba',
-                uf: 'PR',
+                // city: 'Curitiba',
+                // uf: 'SP',
                 items: selectedItems
             }
         }).then(response => {
@@ -73,6 +77,10 @@ const Points = () => {
 
     function handleNavigateBack() {
         navigation.goBack();
+    }
+
+    function handleSeeAll() {
+        navigation.navigate('PointIndex');
     }
 
     function handleNavigateToDetail(id: number) {
@@ -95,20 +103,25 @@ const Points = () => {
 
         <>
             <View style={styles.container} >
-                <TouchableOpacity onPress={handleNavigateBack} >
-                    <Icon name="arrow-left" size={30} color="#34cb79" />
-                </TouchableOpacity>
+                <View style={styles.linksContainer}>
+                    <TouchableOpacity onPress={handleNavigateBack} >
+                        <Icon name="arrow-left" size={30} color="#34cb79" />
+                    </TouchableOpacity>
+                    <Text style={styles.seeAll} onPress={handleSeeAll}>
+                        {/* Ver todos<Icon name="chevron-right" size={24} /> */}
+                        {/* Ver todos<Icon name="arrow-up-right" size={24} /> */}
+                        Ver todos <Icon name="plus" size={24} />
+                    </Text>
+                </View>
 
                 <Text style={styles.title}>Bem vindo</Text>
-                <Text style={styles.description}>Encontre um ponto de coleta próximo de você.</Text>
+                <Text style={styles.description}>Selecione um item para encontrar um ponto de coleta próximo de você.</Text>
 
                 <View style={styles.mapContainer}> 
                     { initialPosition[0] !== 0 && (
                         <MapView 
                             style={styles.map} 
                             initialRegion={{
-                                // latitude: -25.476228,
-                                // longitude: -49.292037,
                                 latitude: initialPosition[0],
                                 longitude: initialPosition[1],
                                 latitudeDelta: 0.014,
@@ -170,12 +183,23 @@ const Points = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 32,
+        paddingHorizontal: 24,
         paddingTop: 20 + Constants.statusBarHeight,
     },
 
-    title: {
+    linksContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+
+    seeAll: {
         fontSize: 20,
+        fontFamily: 'Ubuntu_700Bold',
+        color: '#322153',
+    },
+
+    title: {
+        fontSize: 24,
         fontFamily: 'Ubuntu_700Bold',
         marginTop: 24,
         color: '#322153',
