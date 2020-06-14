@@ -17,10 +17,18 @@ Na versão _mobile_ é possível realizar buscas por pessoas através de alguma 
 
 A imagem e descrição das pessoas cadastradas são obtidas através da API do GitHub.
 
-<p>
-<img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-mobile.png">
-<img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-web.png">
-</p>
+<details>
+  <summary> Telas da versão mobile (<strong>Clique</strong> para revelar)</summary>
+  <p>
+    <img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-mobile.png">
+  </p>
+</details>
+<details>
+  <summary> Versão web (<strong>Clique</strong> para revelar)</summary>
+  <p>
+    <img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-web.png">
+  </p>
+</details>
 
 <br>
 <a href='#top'>Voltar ao topo</a>
@@ -35,25 +43,22 @@ Nesta edição a aplicação é um marketplace para conectar locais especializad
 ### :desktop_computer: _Web_
 A maior parte das funcionalidades está disponível na versão _web_, nela é possível: 
 
-#### :pencil: Cadastrar um Ponto de coleta:
 <details>
-  <summary><strong>Clique aqui</strong> para revelar</summary>
+  <summary>:pencil: Cadastrar um Ponto de coleta (<strong>Clique</strong> para revelar a página)</summary>
   <p>
     <img src="./prints/ecoleta-web-2-cadastro.png" alt="Página para cadastro de Pontos de coleta">
   </p>
 </details>
 
-#### :notebook: Acessar a lista de todos os Pontos de coletas cadastrados e filtrá-los por `Estado` e `Cidade`:
 <details>
-  <summary><strong>Clique aqui</strong> para revelar</summary>
+  <summary>:notebook: Acessar a lista de todos os Pontos de coletas cadastrados e filtrá-los por Estado e Cidade (<strong>Clique</strong> para revelar a página)</summary>
   <p>
     <img src="./prints/ecoleta-web-3-pontos.png" alt="Página para listagem de Pontos de coleta">
   </p>
 </details>
 
-#### :bookmark_tabs: Acessar a página de `detalhes` de um Ponto de coleta
 <details>
-  <summary><strong>Clique aqui</strong> para revelar</summary>
+  <summary>:bookmark_tabs: Acessar a página de detalhes de um Ponto de coleta (<strong>Clique</strong> para revelar a página)</summary>
   <p>
     <img src="./prints/ecoleta-web-4-ponto.png" alt="Página de detalhes de um Pontos de coleta">
   </p>
