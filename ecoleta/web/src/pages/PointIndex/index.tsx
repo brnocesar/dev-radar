@@ -124,21 +124,31 @@ const PointIndex = () => {
                         </button>
                     </div>
 
-                    <ul className="points-grid">
-                        {points.map(point => (
-                            <li 
-                                key={point.id}
-                                className="point-box"
-                            >
-                                <img src={point.image_url} alt={point.name} />
-                                <h2>{point.name}</h2>
-                                <h3>{point.items}</h3>
-                                <span>
-                                    {point.city}, {point.uf}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
+                    { points.length === 0 ? (
+
+                        <span className="not-found">Não foram encontrados Pontos de coleta nessa região</span>
+                        
+                        ) : (
+
+                        <ul className="points-grid">
+                            {points.map(point => (
+                                <li 
+                                    key={point.id}
+                                    className="point-box"
+                                >
+                                    <Link to={`/pontos/${point.id}`}>
+                                        <img src={point.image_url} alt={point.name} />
+                                    </Link>
+                                    {/* <img src={point.image_url} alt={point.name} /> */}
+                                    <h2>{point.name}</h2>
+                                    <h3>{point.items}</h3>
+                                    <span>
+                                        {point.city}, {point.uf}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
 
                 </main>
 

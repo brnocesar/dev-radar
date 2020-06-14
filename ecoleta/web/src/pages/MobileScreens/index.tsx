@@ -18,7 +18,9 @@ const MobileScreens = () => {
                 <NavHeader />
 
                 <main>
-                    <h1>Telas da versão mobile</h1>
+                    <h1>Versão mobile</h1>
+
+                    <span>Abaixo são apresentadas as telas da versão mobile da aplicação, onde é possível encontrar Pontos de coleta próximos a sua posição geográfica.</span>
 
                     <ul className="screens-grid">
                         <li className="point-box" >

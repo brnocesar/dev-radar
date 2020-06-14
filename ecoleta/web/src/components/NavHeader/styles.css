@@ -6,6 +6,7 @@ header {
     justify-content: space-between;
     align-items: center;
     justify-self: center;
+    margin-bottom: 80px;
 }
 
 header > div {
@@ -38,9 +39,25 @@ header a:hover {
     header {
         display: flex;
         flex-direction: column;
+        margin-bottom: 50px;
     }
 
     header > div {
-        margin-top: 50px;
+        margin-top: 40px;
+    }
+}
+
+@media(max-width: 570px) {
+    header {
+        margin-bottom: 30px;
+    }
+
+    header > div {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    header > div a {
+        margin: 10px 0px;
     }
 }

@@ -15,8 +15,8 @@
 
 #page-index-point .container main {
     min-width: 100%;
-    margin: 80px auto;
-    padding: 64px 32px;
+    margin: 0px auto 80px auto;
+    padding: 32px 32px 64px 32px;
     background: #FFF;
     border-radius: 8px;
     display: flex;
@@ -31,7 +31,6 @@
     flex: 1;
     display: flex;
     flex-direction: row;
-    /* align-content: ; */
     margin-top: 32px;
 }
 
@@ -87,8 +86,12 @@
     background: #2FB86E;
 }
 
+.not-found {
+    margin-top: 64px;
+}
+
 .points-grid {
-    margin-top: 100px;
+    margin-top: 64px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
@@ -134,15 +137,50 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
     }
+
+    #page-index-point .field-group .field + .field {
+        margin-left: 16px;
+    }
+    
+    #page-index-point button {
+        margin-left: 16px;
+    }
 }
 
 @media(max-width: 715px) {
-    /* .points-grid {
+    .points-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    #page-index-point .field-group .field + .field {
+        margin-left: 8px;
+    }
+    
+    #page-index-point button {
+        margin-left: 8px;
+    }
+}
+
+@media(max-width: 611px) {
+    #page-index-point .field-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .points-grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 32px;
-    } */
+    }
 
-    /* .points-grid li {
-        max-width: 300px;
-    } */
+    .points-grid li {
+        max-width: 350px;
+    }
+}
+
+@media(max-width: 380px) {
+    #page-index-point .container main h1 {
+        font-size: 28px;
+    }
 }
