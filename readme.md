@@ -29,6 +29,33 @@ A imagem e descrição das pessoas cadastradas são obtidas através da API do G
 ### Edição #12 - Ecoleta<a name='12'></a>
 Nesta edição a aplicação é um marketplace para conectar locais especializados em coletar resíduos e pessoas que querem descartá-los de forma adequada.
 
+O _back-end_ é uma API que atende as versões _web_ e _mobile_. 
+
+Na versão _web_ é possível: 
+
+<details>
+  <summary>Cadastrar um Ponto de coleta (clique para revelar)</summary>
+  <p>
+    <img src="./prints/ecoleta-web-2-cadastro.png" alt="Página para cadastro de Pontos de coleta">
+  </p>
+</details>
+
+<details>
+  <summary>Acessar a lista de Pontos de coletas cadastrados e filtrá-los por `Estado` e `Cidade` (clique para revelar)</summary>
+  <p>
+    <img src="./prints/ecoleta-web-3-pontos.png" alt="Página para listagem de Pontos de coleta">
+  </p>
+</details>
+
+<details>
+  <summary>Acessar a página de `detalhes` de um Ponto de coleta (clique para revelar)</summary>
+  <p>
+    <img src="./prints/ecoleta-web-4-ponto.png" alt="Página de detalhes de um Pontos de coleta">
+  </p>
+</details>
+
+A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geográfica do usuário, abaixo é possível ver as telas da aplicação _mobile_:
+
 <details>
   <summary><strong>Clique aqui</strong> para ver as telas da versão <i>mobile</i></summary>
   <p>
