@@ -3,11 +3,11 @@ As "semanas gratuitas" da [Rocketseat](https://rocketseat.com.br/) são eventos 
 
 O destaque do evento é o curso focado na _stack_ JavaScript em que uma aplicação funcional é desenvolvida do zero. Nessa aplicação é utilizado o NodeJS para contruir o _back_, React para a versão _web_ e React Native para a _mobile_.
 
-## Projetos desenvolvidos<a name='top'></a>  
+#### Projetos desenvolvidos<a name='top'></a>  
 - <a href='#10'>Edição #10 - DevRadar</a>
 - <a href='#12'>Edição #12 - Ecoleta</a>
 
-### Edição #10 - DevRadar<a name='10'></a>
+## Edição #10 - DevRadar<a name='10'></a>
 
 Na edição **#10** foi desenvolvida uma aplicação em que pessoas Desenvolvedoras podem se cadastrar e ser encontradas de acordo com as tecnologias que usam. 
 
@@ -26,34 +26,40 @@ A imagem e descrição das pessoas cadastradas são obtidas através da API do G
 <a href='#top'>Voltar ao topo</a>
 <br>
 
-### Edição #12 - Ecoleta<a name='12'></a>
+## Edição #12 - Ecoleta<a name='12'></a>
 Nesta edição a aplicação é um marketplace para conectar locais especializados em coletar resíduos e pessoas que querem descartá-los de forma adequada.
 
-O _back-end_ é uma API que atende as versões _web_ e _mobile_. 
+### :gear: _back-end_
+É uma API que atende as versões _web_ e _mobile_. (...)
 
-Na versão _web_ é possível: 
+### :desktop_computer: _Web_
+A maior parte das funcionalidades está disponível na versão _web_, nela é possível: 
 
+#### :pencil: Cadastrar um Ponto de coleta:
 <details>
-  <summary>Cadastrar um Ponto de coleta (clique para revelar)</summary>
+  <summary><strong>Clique aqui</strong> para revelar</summary>
   <p>
     <img src="./prints/ecoleta-web-2-cadastro.png" alt="Página para cadastro de Pontos de coleta">
   </p>
 </details>
 
+#### :notebook: Acessar a lista de todos os Pontos de coletas cadastrados e filtrá-los por `Estado` e `Cidade`:
 <details>
-  <summary>Acessar a lista de Pontos de coletas cadastrados e filtrá-los por `Estado` e `Cidade` (clique para revelar)</summary>
+  <summary><strong>Clique aqui</strong> para revelar</summary>
   <p>
     <img src="./prints/ecoleta-web-3-pontos.png" alt="Página para listagem de Pontos de coleta">
   </p>
 </details>
 
+#### :bookmark_tabs: Acessar a página de `detalhes` de um Ponto de coleta
 <details>
-  <summary>Acessar a página de `detalhes` de um Ponto de coleta (clique para revelar)</summary>
+  <summary><strong>Clique aqui</strong> para revelar</summary>
   <p>
     <img src="./prints/ecoleta-web-4-ponto.png" alt="Página de detalhes de um Pontos de coleta">
   </p>
 </details>
 
+### :iphone: _Mobile_
 A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geográfica do usuário, abaixo é possível ver as telas da aplicação _mobile_:
 
 <details>
@@ -62,3 +68,4 @@ A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geo
     <img src="./prints/ecoleta-mobile.png" alt="Telas da versão mobile">
   </p>
 </details>
+
