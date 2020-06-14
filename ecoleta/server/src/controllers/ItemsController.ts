@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import knex from '../database/connection';
+import localhostDev from '../config/localhostAddress';
 
 class ItemsController {
 
@@ -12,7 +13,8 @@ class ItemsController {
                 id:         item.id,
                 title:      item.title,
                 // image_url:  `http://localhost:3333/uploads/items/${item.image}`
-                image_url:  `http://192.168.0.2:3333/uploads/items/${item.image}`
+                // image_url:  `http://192.168.0.2:3333/uploads/items/${item.image}`
+                image_url:  `http://${localhostDev}/uploads/items/${item.image}`
             }
         });
         

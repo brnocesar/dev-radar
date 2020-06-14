@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import knex from '../database/connection';
+import localhostDev from '../config/localhostAddress';
 
 
 class PointsController {
@@ -34,7 +35,8 @@ class PointsController {
             
             points[i].items = items.map(item => (item.title)).join(', ');
 
-            points[i].image_url = `http://192.168.0.2:3333/uploads/points/${points[i].image}`;
+            // points[i].image_url = `http://192.168.0.2:3333/uploads/points/${points[i].image}`;
+            points[i].image_url = `http://${localhostDev}/uploads/points/${points[i].image}`;
         }
 
         return response.json(points);
@@ -104,7 +106,8 @@ class PointsController {
         
         const serializedPoint = {
             ...point,
-            image_url:  `http://192.168.0.2:3333/uploads/points/${point.image}`
+            // image_url:  `http://192.168.0.2:3333/uploads/points/${point.image}`
+            image_url:  `http://${localhostDev}/uploads/points/${point.image}`
         };
 
         const items = await knex('items')
