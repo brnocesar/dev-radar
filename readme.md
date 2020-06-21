@@ -7,7 +7,7 @@ O destaque do evento é o curso focado na _stack_ JavaScript em que uma aplicaç
 - <a href='#10'>Edição #10 - DevRadar</a>
 - <a href='#12'>Edição #12 - Ecoleta</a>
 
-## Edição #10 - DevRadar<a name='10'></a>
+## :globe_with_meridians: Edição #10 - DevRadar<a name='10'></a>
 
 Na edição **#10** foi desenvolvida uma aplicação em que pessoas Desenvolvedoras podem se cadastrar e ser encontradas de acordo com as tecnologias que usam. 
 
@@ -34,7 +34,7 @@ A imagem e descrição das pessoas cadastradas são obtidas através da API do G
 <a href='#top'>Voltar ao topo</a>
 <br>
 
-## Edição #12 - Ecoleta<a name='12'></a>
+## :recycle: Edição #12 - Ecoleta<a name='12'></a>
 Nesta edição a aplicação é um marketplace para conectar locais especializados em coletar resíduos e pessoas que querem descartá-los de forma adequada.
 
 ### :gear: _back-end_
@@ -65,7 +65,7 @@ A maior parte das funcionalidades está disponível na versão _web_, nela é po
 </details>
 
 ### :iphone: _Mobile_
-A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geográfica do usuário, abaixo é possível ver as telas da aplicação _mobile_:
+A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geográfica do usuário. Abaixo são apresentadas as telas da aplicação:
 
 <details>
   <summary><strong>Clique aqui</strong> para ver as telas da versão <i>mobile</i></summary>
@@ -73,4 +73,3 @@ A versão _mobile_ permite buscar Pontos de coleta de acordo com a posição geo
     <img src="./prints/ecoleta-mobile.png" alt="Telas da versão mobile">
   </p>
 </details>
-
