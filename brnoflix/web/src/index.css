@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --primary: #2A7AE4;
+    --black: #000000;
+    --blackLighter: #9E9E9E;
+    --grayLight: #F5F5F5;
+    --grayMedium: #e5e5e5; 
+    --white: #FFFFFF;
+    --frontEnd: #6BD1FF;
+    --backEnd: #00C86F;
+    --brnoAzulEscuro: #131a22;
+    --brnoLaranjaTerra: #772a18;
+    --brnoLaranja: #f88166;
+    --brnoLaranjaRosado: #cea69d;
+    --brnoRoxoEscuro: #392b41;
+    --brnoRoxoClaro: #9d79ac;
+    --magicGray: #141414;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+}
+
+.App {
+    background: var(--magicGray);
+}
