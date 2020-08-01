@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BaseTemplate from '../../../components/BaseTemplate';
 import FormField from '../../../components/FormField';
@@ -22,14 +22,21 @@ function CadastroCategoria() {
   }
 
   function handleChange(event) {
-    // const { getAttribute, value } = event.target
     setValue(
-      // getAttribute('name'),
-      // value
       event.target.getAttribute('name'),
       event.target.value,
     );
   }
+
+  useEffect(() => {
+    const URL_CATEGORIES = 'http://localhost:8080/categories';
+    fetch(URL_CATEGORIES).then(async (response) => {
+      const result = await response.json();
+      setCategories([
+        ...result,
+      ]);
+    });
+  }, []);
 
   return (
     <BaseTemplate>
@@ -75,6 +82,12 @@ function CadastroCategoria() {
           Cadastrar
         </Button>
       </form>
+
+      {categories.length === 0 && (
+        <div>
+          Carregando...
+        </div>
+      )}
 
       <ul>
         {categories.map((category) => (
