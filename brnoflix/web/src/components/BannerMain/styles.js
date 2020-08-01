@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const ContentAreaContainer = styled.section`
     margin-left: 5%;
     margin-right: 5%;

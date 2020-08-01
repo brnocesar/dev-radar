@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import BaseTemplate from '../../../components/BaseTemplate';
 
 function CadastroVideo() {
-    return (
-        <BaseTemplate>
+  return (
+    <BaseTemplate>
 
-            <h1>Cadastro de Vídeos</h1>
+      <h1>Cadastro de Vídeos</h1>
 
-            <Link to="/cadastro/categoria">
-                Cadastrar Categoria
-            </Link>
+      <Link to="/cadastro/categoria">
+        Cadastrar Categoria
+      </Link>
 
-        </BaseTemplate>
-    );
+    </BaseTemplate>
+  );
 }
 
 export default CadastroVideo;

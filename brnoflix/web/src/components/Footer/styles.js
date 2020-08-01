@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const FooterBase = styled.footer`
     background: var(--brnoAzulEscuro);
     border-top: 2px solid var(--brnoLaranja);

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Title = styled.h3`
     font-style: normal;
     font-weight: normal;

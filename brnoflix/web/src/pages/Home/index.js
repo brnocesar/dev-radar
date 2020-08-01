@@ -6,27 +6,27 @@ import Menu from '../../components/Menu';
 import Footer from '../../components/Footer';
 
 function Home() {
-    return (
-        <div style={{ background: "#131a22" }}>
-            <Menu />
+  return (
+    <div style={{ background: '#131a22' }}>
+      <Menu />
 
-            <BannerMain 
-                videoTitle={"testando 1,2,3..."}
-                videoDescription={"lalalala"}
-                url={"https://www.youtube.com/watch?v=DQ3A2PTpDBU"}
-            />
+      <BannerMain
+        videoTitle="testando 1,2,3..."
+        videoDescription="lalalala"
+        url="https://www.youtube.com/watch?v=DQ3A2PTpDBU"
+      />
 
-            {dadosIniciais.categorias.map(categoria => (
-                <Carousel 
-                    key={categoria.id}    
-                    ignoreFirstVideo
-                    category={categoria}
-                />
-            ))}
+      {dadosIniciais.categorias.map((categoria) => (
+        <Carousel
+          key={categoria.id}
+          ignoreFirstVideo
+          category={categoria}
+        />
+      ))}
 
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }
 
 export default Home;
