@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "name": "Front End",
+            "description": "Onde fica a beleza do seu site",
+            "color": "#9d79ac"
+        },
+        {
+            "id": 2,
+            "name": "Back End",
+            "description": "Onde a gambiarr cof cof... digo, a magia acontece de verdade",
+            "color": "#9d79ac"
+        }
+    ]
+}
