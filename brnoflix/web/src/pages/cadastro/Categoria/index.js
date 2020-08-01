@@ -29,7 +29,9 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL_CATEGORIES = 'http://localhost:8080/categories';
+    const URL_CATEGORIES = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categories'
+      : 'https://brnoflix.herokuapp.com/categories';
     fetch(URL_CATEGORIES).then(async (response) => {
       const result = await response.json();
       setCategories([
