@@ -5,14 +5,12 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 
-function CadastroCategoria() {
-  const initialValues = {
+function CategoryRegistration() {
+  const { values, handleChange, clearForm } = useForm({
     name: '',
     description: '',
     color: '#cea69d',
-  };
-
-  const { values, handleChange, clearForm } = useForm(initialValues);
+  });
 
   const [categories, setCategories] = useState([]);
 
@@ -32,7 +30,7 @@ function CadastroCategoria() {
     <BaseTemplate>
 
       <h1>
-        Cadastro de Categoria:
+        Cadastro de Categoria
       </h1>
 
       <form onSubmit={function handleSubmit(event) {
@@ -70,7 +68,7 @@ function CadastroCategoria() {
         />
 
         <Button>
-          Cadastrar
+          Cadastrar Categoria
         </Button>
       </form>
 
@@ -96,4 +94,4 @@ function CadastroCategoria() {
   );
 }
 
-export default CadastroCategoria;
+export default CategoryRegistration;
