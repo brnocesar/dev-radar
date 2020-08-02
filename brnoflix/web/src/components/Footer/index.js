@@ -6,18 +6,26 @@ function Footer() {
 
     <FooterBase>
       <p>
-        {'Desenvolvido  durante  a  '}
+        {'Desenvolvido durante a '}
         <ExtraLink href="https://vitrine-imersao-react.vercel.app/">
           Imersão React
         </ExtraLink>
-        {'  da  '}
+        {' da '}
         <a href="https://www.alura.com.br/">
           <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" height="19" alt="Logo Alura" />
         </a>
-        {'  por  '}
+        {' por '}
         <ExtraLink href="https://brnocesar.github.io/">
-          Bruno  Cesar
+          Bruno Cesar
         </ExtraLink>
+        .
+      </p>
+      <p>
+        {'Acesse o '}
+        <ExtraLink href="https://github.com/brnocesar/learning-react/tree/main/brnoflix">
+          repositório
+        </ExtraLink>
+        {' do projeto.'}
       </p>
     </FooterBase>
   );

@@ -1,0 +1,60 @@
+[
+    {
+      "id": 1,
+      "name": "Front End",
+      "description": "Onde fica a beleza do seu site",
+      "color": "#9d79ac",
+      "videos": [
+        {
+          "id": 5,
+          "categoryId": 1,
+          "title": "O que faz uma desenvolvedora front-end?",
+          "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+        },
+        {
+          "id": 6,
+          "categoryId": 1,
+          "title": "Fazendo um player de vídeo com React",
+          "url": "https://www.youtube.com/watch?v=ZaYvwn9nBD4"
+        },
+        {
+          "id": 11,
+          "categoryId": 1,
+          "title": "React Native e GraphQL",
+          "url": "https://www.youtube.com/watch?v=Jfisid9326c"
+        },
+        {
+          "id": 12,
+          "categoryId": 1,
+          "title": "Usar React numa aplicação Laravel",
+          "url": "https://www.youtube.com/watch?v=XbYzUAckuvo"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Back End",
+      "description": "Onde a gambiarr cof cof... digo, a magia acontece de verdade",
+      "color": "#dbd140",
+      "videos": [
+        {
+          "id": 1,
+          "categoryId": 2,
+          "title": "REST, uma reflexão sobre os princípios que escolhemos utilizar",
+          "url": "https://www.youtube.com/watch?v=3T5kmoNExME"
+        },
+        {
+          "id": 2,
+          "categoryId": 2,
+          "title": "How to Create PHP Development Environments with Docker Compose",
+          "url": "https://www.youtube.com/watch?v=l0jb-N5H52A"
+        },
+        {
+          "id": 3,
+          "categoryId": 2,
+          "title": "O que são Testes Automatizados",
+          "url": "https://www.youtube.com/watch?v=O81uVNg4nEk"
+        }
+      ]
+    }
+  ]

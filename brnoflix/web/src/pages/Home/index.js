@@ -3,6 +3,7 @@ import BaseTemplate from '../../components/BaseTemplate';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import categoriesRepository from '../../repositories/categories';
+import backupData from '../../data/backup.json';
 
 function Home() {
   const [initialData, setInitialData] = useState([]);
@@ -13,9 +14,7 @@ function Home() {
         setInitialData(categoriesWithVideos);
       })
       .catch((err) => {
-        console.log(err.message);
-        // deixa um "backup do banco e joga ali"
-        // setInitialData(backup);
+        setInitialData(backupData);
       });
   }, []);
 

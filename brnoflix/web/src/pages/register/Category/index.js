@@ -4,6 +4,7 @@ import BaseTemplate from '../../../components/BaseTemplate';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+import categoriesRepository from '../../../repositories/categories';
 
 function CategoryRegistration() {
   const { values, handleChange, clearForm } = useForm({
@@ -28,6 +29,9 @@ function CategoryRegistration() {
 
   return (
     <BaseTemplate>
+      <Link to="/">
+        Ir para Home
+      </Link>
 
       <h1>
         Cadastro de Categoria
@@ -35,12 +39,21 @@ function CategoryRegistration() {
 
       <form onSubmit={function handleSubmit(event) {
         event.preventDefault();
-        setCategories([
-          ...categories,
-          values,
-        ]);
 
-        clearForm();
+        categoriesRepository.create({
+          name: values.name,
+          description: values.description,
+          color: values.color,
+        })
+          .then(() => {
+            // apresenta uma tela, modal, algo do tipo... "Categoria cadastrada com sucesso!"
+            setCategories([
+              ...categories,
+              values,
+            ]);
+
+            clearForm();
+          });
       }}
       >
         <FormField
@@ -78,18 +91,20 @@ function CategoryRegistration() {
         </div>
       )}
 
-      <ul>
-        {categories.map((category) => (
-          <li key={`${category.name}`}>
-            {category.name}
-          </li>
-        ))}
-      </ul>
-
-      <Link to="/">
-        Ir para Home
-      </Link>
-
+      {categories.length >= 1 && (
+        <>
+          <h2>
+            Categoria cadastradas
+          </h2>
+          <ul>
+            {categories.map((category) => (
+              <li key={`${category.name}`}>
+                {category.name}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </BaseTemplate>
   );
 }

@@ -10,7 +10,13 @@
       "id": 2,
       "name": "Back End",
       "description": "Onde a gambiarr cof cof... digo, a magia acontece de verdade",
-      "color": "#9d79ac"
+      "color": "#dbd140"
+    },
+    {
+      "name": "Teste",
+      "description": "Uma categoria de teste",
+      "color": "#7bd4d7",
+      "id": 3
     }
   ],
   "videos": [
@@ -41,14 +47,14 @@
     {
       "id": 5,
       "categoryId": 1,
-      "title": "Fazendo um player de vídeo com React",
-      "url": "https://www.youtube.com/watch?v=ZaYvwn9nBD4"
+      "title": "O que faz uma desenvolvedora front-end?",
+      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
     },
     {
       "id": 6,
       "categoryId": 1,
-      "title": "Usar React numa aplicação Laravel",
-      "url": "https://www.youtube.com/watch?v=XbYzUAckuvo"
+      "title": "Fazendo um player de vídeo com React",
+      "url": "https://www.youtube.com/watch?v=ZaYvwn9nBD4"
     },
     {
       "id": 7,
@@ -83,18 +89,19 @@
     {
       "id": 12,
       "categoryId": 1,
-      "title": "O que faz uma desenvolvedora front-end?",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "title": "Usar React numa aplicação Laravel",
+      "url": "https://www.youtube.com/watch?v=XbYzUAckuvo"
     },
     {
-      "title": "lala",
-      "url": "lele",
+      "title": "Adobe XD: Design visual de um site mobile",
+      "url": "https://www.youtube.com/watch?v=R_KEOo6EEl0",
+      "categoryId": 1,
       "id": 13
     },
     {
-      "title": "lalal",
-      "url": "lelel",
-      "categoryId": "lilil",
+      "title": "O que é acessibilidade",
+      "url": "https://www.youtube.com/watch?v=sO42iMDUWUw",
+      "categoryId": 1,
       "id": 14
     },
     {
@@ -108,6 +115,60 @@
       "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
       "categoryId": 1,
       "id": 16
+    },
+    {
+      "title": "teste",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoryId": 1,
+      "id": 17
+    },
+    {
+      "title": "teste2",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoryId": 1,
+      "id": 18
+    },
+    {
+      "title": "teste3",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoryId": 1,
+      "id": 19
+    },
+    {
+      "title": "teste",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoryId": 1,
+      "id": 20
+    },
+    {
+      "title": "Which Mechanical Keyboard Switches are BEST? Blind Test!",
+      "url": "https://www.youtube.com/watch?v=dqai0_nnTgs",
+      "categoryId": 3,
+      "id": 21
+    },
+    {
+      "title": "TESTE DE COVID",
+      "url": "https://www.youtube.com/watch?v=UoS-WsIu65g",
+      "categoryId": 3,
+      "id": 22
+    },
+    {
+      "title": "Apple Magic Keyboard vs Anne Pro(Cherry RGB Red Switches) Typing Sounds Comparison",
+      "url": "https://www.youtube.com/watch?v=crU1LXUff0I",
+      "categoryId": 3,
+      "id": 23
+    },
+    {
+      "title": "Which is The Strongest Helmet? Hydraulic Press Test!",
+      "url": "https://www.youtube.com/watch?v=rnBrV4XukHc",
+      "categoryId": 3,
+      "id": 24
+    },
+    {
+      "title": "MEUS ANTIGOS MAPAS NO MINECRAFT RTX!",
+      "url": "https://www.youtube.com/watch?v=F1WGj5j1u38",
+      "categoryId": 3,
+      "id": 25
     }
   ]
 }

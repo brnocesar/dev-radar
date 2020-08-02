@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import BaseTemplate from '../../../components/BaseTemplate';
 import FormField from '../../../components/FormField';
 import useForm from '../../../hooks/useForm';
 import Button from '../../../components/Button';
+import categoriesRepository from '../../../repositories/categories';
 import videosRepository from '../../../repositories/videos';
 
 function VideoRegistration() {
   const history = useHistory();
+  const [categories, setCategories] = useState([]);
+  const categoryNames = categories.map(({ name }) => name);
   const { values, handleChange } = useForm({
     title: '',
     url: '',
-    categoryId: '',
+    category: '',
   });
+
+  useEffect(() => {
+    categoriesRepository
+      .getAll()
+      .then((response) => {
+        setCategories(response);
+      });
+  }, []);
 
   return (
     <BaseTemplate>
@@ -25,14 +36,16 @@ function VideoRegistration() {
 
       <form onSubmit={(event) => {
         event.preventDefault();
+
+        const selectedCategory = categories.find((category) => category.name === values.category);
+
         videosRepository.create({
           title: values.title,
           url: values.url,
-          categoryId: 1, // testes
+          categoryId: selectedCategory.id,
         })
           .then(() => {
             // apresenta uma tela, modal, algo do tipo... "Vídeo cadastrado com sucesso!"
-            // console.log('=> values', values);
             history.push('/');
           });
       }}
@@ -53,10 +66,10 @@ function VideoRegistration() {
 
         <FormField
           label="Categoria"
-          // type="select"
-          name="categoryId"
-          value={values.categoryId}
+          name="category"
+          value={values.category}
           onChange={handleChange}
+          suggestions={categoryNames}
         />
 
         <Button>
