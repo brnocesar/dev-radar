@@ -1,31 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import BaseTemplate from '../../components/BaseTemplate';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import dadosIniciais from '../../data/dados_iniciais.json';
-import Menu from '../../components/Menu';
-import Footer from '../../components/Footer';
+import categoriesRepository from '../../repositories/categories';
 
 function Home() {
+  const [initialData, setInitialData] = useState([]);
+
+  useEffect(() => {
+    categoriesRepository.getAllWithVideos()
+      .then((categoriesWithVideos) => {
+        setInitialData(categoriesWithVideos);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        // deixa um "backup do banco e joga ali"
+        // setInitialData(backup);
+      });
+  }, []);
+
   return (
-    <div style={{ background: '#131a22' }}>
-      <Menu />
+    <BaseTemplate paddingAll={0}>
 
-      <BannerMain
-        videoTitle="testando 1,2,3..."
-        videoDescription="lalalala"
-        url="https://www.youtube.com/watch?v=DQ3A2PTpDBU"
-      />
+      {initialData.length === 0 && (
+        <div>
+          Carregando...
+          {/* trocar isso por uma figurinha rodando ou piscando */}
+        </div>
+      )}
 
-      {dadosIniciais.categorias.map((categoria) => (
-        <Carousel
-          key={categoria.id}
-          ignoreFirstVideo
-          category={categoria}
-        />
-      ))}
+      {initialData.map((category, index) => {
+        if (index === 0) {
+          return (
+            <div key={category.id}>
+              <BannerMain
+                videoTitle={initialData[0].videos[0].title}
+                videoDescription={initialData[0].videos[0].description}
+                url={initialData[0].videos[0].url}
+              />
 
-      <Footer />
-    </div>
+              <Carousel
+                ignoreFirstVideo
+                category={category}
+              />
+            </div>
+          );
+        }
+
+        return (
+          <Carousel
+            key={category.id}
+            category={category}
+          />
+        );
+      })}
+
+    </BaseTemplate>
   );
 }
 

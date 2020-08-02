@@ -1,29 +1,29 @@
 import React from 'react';
-import { VideoCardGroupContainer, Title, ExtraLink } from './styles';
+import PropTypes from 'prop-types';
+import { VideoCardGroupContainer, Title, Description } from './styles';
 import VideoCard from './components/VideoCard';
 import Slider, { SliderItem } from './components/Slider';
 
 function Carousel({ ignoreFirstVideo, category }) {
-  const categoryTitle = category.titulo;
-  const categoryColor = category.cor;
-  const categoryExtraLink = category.link_extra;
+  const categoryName = category.name;
+  const categoryColor = category.color;
+  const categoryDescription = category.description;
   const { videos } = category;
 
   return (
 
     <VideoCardGroupContainer>
-      {categoryTitle && (
+      {categoryName && (
         <>
-          <Title style={{ backgroundColor: categoryColor || 'red' }}>
-            {categoryTitle}
+          <Title style={{ backgroundColor: categoryColor || '#9d79ac' }}>
+            {categoryName}
           </Title>
 
-          {categoryExtraLink
-                        && (
-                        <ExtraLink href={categoryExtraLink.url} target="_blank">
-                          {categoryExtraLink.text}
-                        </ExtraLink>
-                        )}
+          {categoryDescription && (
+            <Description>
+              {categoryDescription}
+            </Description>
+          )}
         </>
       )}
 
@@ -34,9 +34,10 @@ function Carousel({ ignoreFirstVideo, category }) {
           }
 
           return (
-            <SliderItem key={video.titulo}>
+            <SliderItem key={video.title}>
               <VideoCard
-                videoTitle={video.titulo}
+                key={video.id}
+                videoTitle={video.title}
                 videoURL={video.url}
                 categoryColor={categoryColor}
               />
@@ -48,5 +49,14 @@ function Carousel({ ignoreFirstVideo, category }) {
     </VideoCardGroupContainer>
   );
 }
+
+Carousel.defaultProps = {
+  ignoreFirstVideo: '',
+};
+
+Carousel.propTypes = {
+  ignoreFirstVideo: PropTypes.string,
+  category: PropTypes.string.isRequired,
+};
 
 export default Carousel;
