@@ -5,8 +5,8 @@ import Menu from '../Menu';
 import Footer from '../Footer';
 
 const Main = styled.main`
-    background-color: var(--brnoAzulEscuro);
-    color: var(--brnoLaranjaRosado);
+    background-color: var(--azulEscuro);
+    color: var(--laranjaRosado);
     flex: 1;
     padding-top: 50px;
     padding-left: 5%;

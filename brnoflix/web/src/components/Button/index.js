@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    color: var(--brnoLaranjaRosado);
-    border: 1px solid var(--brnoLaranjaRosado);
+    color: var(--laranjaRosado);
+    border: 1px solid var(--laranjaRosado);
     box-sizing: border-box;
     cursor: pointer;
     padding: 16px 24px;
@@ -17,9 +17,9 @@ const Button = styled.button`
     &:hover,
     &:focus {
         opacity: .9;
-        background-color: var(--brnoLaranjaRosado);
-        color: var(--brnoAzulEscuro);
-        border: 1px solid var(--brnoLaranjaRosado);
+        background-color: var(--laranjaRosado);
+        color: var(--azulEscuro);
+        border: 1px solid var(--laranjaRosado);
         transition: 0.5s;
     }
 
@@ -28,9 +28,9 @@ const Button = styled.button`
         left: 0;
         right: 0;
         bottom: 0;
-        color: var(--brnoAzulEscuro);
-        background: var(--brnoLaranjaRosado);
-        border-top: 2px solid var(--brnoAzulEscuro);
+        color: var(--azulEscuro);
+        background: var(--laranjaRosado);
+        border-top: 2px solid var(--azulEscuro);
         border-radius: 0;
         text-align: center;
 }
