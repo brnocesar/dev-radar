@@ -1,10 +1,9 @@
 import React from 'react';
+import { IoLogoWhatsapp } from 'react-icons/io';
 import './styles.css';
-import zapZapIcon from '../../assets/images/icons/whatsapp.svg';
 
 
 function TeacherItem() {
-    
     return (
         <article className="teacher-item">
             <header>
@@ -20,12 +19,17 @@ function TeacherItem() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.
             </p>
             <footer>
-                <p>
-                    Preço/Hora
-                    <strong>R$ 500,00</strong>
-                </p>
+                <span>
+                    <p>
+                        Preço/Hora
+                    </p>
+                    <p>
+                        R$ 500,00
+                    </p>
+                </span>
                 <button type="button">
-                    <img src={zapZapIcon} alt="WhatsApp"/>
+                    <IoLogoWhatsapp />
+                    {/* <img src={zapZapIcon} alt="WhatsApp"/> */}
                     Entrar em contato
                 </button>
             </footer>

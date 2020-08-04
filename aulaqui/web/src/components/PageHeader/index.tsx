@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 import './styles.css';
-import logo from '../../assets/images/logo.svg';
-import backIcon from '../../assets/images/icons/back.svg';
+import logo from '../../assets/images/blue-logo.png';
 
 interface PageHeaderProps {
     title: string;
@@ -14,7 +14,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
         <header className="page-header">
             <div className="top-bar-container">
                 <Link to="/">
-                    <img src={backIcon} alt="Voltar"/>
+                    <FaLongArrowAltLeft />
                 </Link>
                 <img src={logo} alt="Logo"/>
             </div>

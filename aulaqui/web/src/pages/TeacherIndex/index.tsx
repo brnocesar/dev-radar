@@ -8,7 +8,7 @@ function TeacherIndex() {
     
     return (
         <div id="page-teacher-index" className="container">
-            <PageHeader title="Encontre um professor e nem pense em pechinchar">
+            <PageHeader title="Tenha aula com os melhores professores sem sair de casa">
                 <form id="search-teachers">
                     <div className="input-block">
                         <label htmlFor="subject">Matéria</label>
@@ -26,9 +26,20 @@ function TeacherIndex() {
             </PageHeader>
 
             <main>
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
+                <ul className="teachers-grid">
+                    <li className="point-box" >
+                        <TeacherItem />
+                    </li>
+                    <li className="point-box" >
+                        <TeacherItem />
+                    </li>
+                    <li className="point-box" >
+                        <TeacherItem />
+                    </li>
+                    <li className="point-box" >
+                        <TeacherItem />
+                    </li>
+                </ul>
             </main>
         </div>
     );

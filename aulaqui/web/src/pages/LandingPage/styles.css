@@ -9,7 +9,8 @@
 }
 
 .logo-container img {
-    height: 10rem;
+    width: 45rem;
+    /* height: 10rem; */
 }
 
 .hero-image {
@@ -60,14 +61,27 @@
 }
 
 .buttons-container a.student{
-    background: var(--color-primary-lighter);
+    background: var(--color-warning);
+    color: var(--color-secundary-darker);
 }
+
+.buttons-container a.student svg {
+    color: var(--color-secundary-darker);
+    margin-right: 1rem;
+    font-size: 3rem;
+}
+
+.buttons-container a.teacher svg {
+    margin-right: 1rem;
+    font-size: 2.5rem;
+}
+
 .buttons-container a.teacher{
     background: var(--color-secundary);
 }
 
 .buttons-container a.student:hover{
-    background: var(--color-primary-light);
+    background: var(--color-warning-dark);
 }
 .buttons-container a.teacher:hover{
     background: var(--color-secundary-dark);
@@ -86,6 +100,10 @@
 
 .total-connections img {
     margin-left: 0.8rem;
+}
+
+.total-connections svg {
+    margin-left: 1rem;
 }
 
 @media (min-width: 1024px) {

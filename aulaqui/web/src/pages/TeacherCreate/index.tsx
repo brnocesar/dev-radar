@@ -7,7 +7,7 @@ function TeacherCreate() {
     
     return (
         <div id="page-teacher-create" className="container">
-            <PageHeader title="Cadastre-se para vender aulas" />
+            <PageHeader title="Cadastre-se e lecione para os alunos mais dedicados" />
         </div>
     );
 }

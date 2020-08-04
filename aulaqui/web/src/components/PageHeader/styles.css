@@ -19,12 +19,17 @@
     transition: opacity 0.2s;
 }
 
+.page-header .top-bar-container a svg {
+    font-size: 4rem;
+    color: var(--color-secundary-darker);
+}
+
 .page-header .top-bar-container a:hover {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .page-header .top-bar-container > img{
-    height: 1.6rem;
+    height: 3rem;
 }
 
 .page-header .header-content {
