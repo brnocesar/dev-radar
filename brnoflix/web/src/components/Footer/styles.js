@@ -23,3 +23,7 @@ export const ExtraLink = styled.a`
       color: var(--azulMaisEscuro);
     }
 `;
+
+export const ParagrafoMiudo = styled.p`
+    font-size: .85em;
+`;

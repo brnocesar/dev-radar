@@ -3,7 +3,7 @@ import BaseTemplate from '../../components/BaseTemplate';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import categoriesRepository from '../../repositories/categories';
-import backupData from '../../data/backup.json';
+import StartingMachineOnHeroku from '../../components/StartingMachineOnHeroku';
 
 function Home() {
   const [initialData, setInitialData] = useState([]);
@@ -14,7 +14,7 @@ function Home() {
         setInitialData(categoriesWithVideos);
       })
       .catch((err) => {
-        setInitialData(backupData);
+        // tratar o erro
       });
   }, []);
 
@@ -23,8 +23,7 @@ function Home() {
 
       {initialData.length === 0 && (
         <div>
-          Carregando...
-          {/* trocar isso por uma figurinha rodando ou piscando */}
+          <StartingMachineOnHeroku />
         </div>
       )}
 

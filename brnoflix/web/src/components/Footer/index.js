@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterBase, ExtraLink } from './styles';
+import { FooterBase, ExtraLink, ParagrafoMiudo } from './styles';
 
 function Footer() {
   return (
@@ -20,13 +20,13 @@ function Footer() {
         </ExtraLink>
         .
       </p>
-      <p>
+      <ParagrafoMiudo>
         {'Acesse o '}
         <ExtraLink href="https://github.com/brnocesar/learning-react/tree/main/brnoflix">
           repositório
         </ExtraLink>
         {' do projeto.'}
-      </p>
+      </ParagrafoMiudo>
     </FooterBase>
   );
 }

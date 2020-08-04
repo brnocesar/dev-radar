@@ -35,7 +35,8 @@ BaseTemplate.defaultProps = {
 };
 
 BaseTemplate.propTypes = {
-  children: PropTypes.element.isRequired,
+  // children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   paddingAll: PropTypes.string,
 };
 

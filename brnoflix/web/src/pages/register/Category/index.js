@@ -16,15 +16,13 @@ function CategoryRegistration() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const URL_CATEGORIES = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categories'
-      : 'https://brnoflix.herokuapp.com/categories';
-    fetch(URL_CATEGORIES).then(async (response) => {
-      const result = await response.json();
-      setCategories([
-        ...result,
-      ]);
-    });
+    categoriesRepository.getAll()
+      .then((allCategories) => {
+        setCategories([...allCategories]);
+      })
+      .catch((err) => {
+        setCategories([]);
+      });
   }, []);
 
   return (
