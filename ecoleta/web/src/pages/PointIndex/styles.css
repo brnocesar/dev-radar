@@ -1,6 +1,6 @@
 #page-index-point {
     width: 100%;
-    max-width: var(--container-max-width);
+    max-width: var(--container-max-width); /* ver isso */
     margin: 0 auto;
 }
 

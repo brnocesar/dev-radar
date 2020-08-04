@@ -132,7 +132,6 @@ const PointIndex = () => {
 
                         <ul className="points-grid">
                             {points.map(point => (
-                                // <li key={point.id} >
                                 <li 
                                     key={point.id}
                                     className="point-box"
