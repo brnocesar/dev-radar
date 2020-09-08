@@ -17,13 +17,13 @@ A imagem e descrição das pessoas cadastradas são obtidas através da API do G
 <details>
   <summary> Telas da versão mobile (<strong>Clique</strong> para revelar)</summary>
   <p>
-    <img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-mobile.png">
+    <img src="./prints/v1-mobile.png">
   </p>
 </details>
 <details>
   <summary> Versão web (<strong>Clique</strong> para revelar)</summary>
   <p>
-    <img src="https://raw.githubusercontent.com/brnocesar/omnistack-10/master/prints/v1-web.png">
+    <img src="./prints/v1-web.png">
   </p>
 </details>
 
